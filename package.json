@@ -1,45 +1,110 @@
 {
-  "name": "sample-vscode-extension",
-  "displayName": "sample-vscode-extension",
-  "description": "Trying the figure out the use of vscode-extension-tester",
+  "name": "helloworld-sample",
+  "displayName": "Vscode Extension Tester Trial",
+  "description": "HelloWorld example for VS Code",
   "version": "0.0.1",
+  "publisher": "vscode-samples",
+  "repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-sample",
   "engines": {
-    "vscode": "^1.79.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:sample-vscode-extension.helloWorld"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "sample-vscode-extension.helloWorld",
+        "command": "extension.helloWorld",
         "title": "Hello World"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "title1",
+        "properties": {
+          "sample-sdk.title1.prop11": {
+            "type": "string",
+            "description": "This is property1 in title1.",
+            "scope": "resource"
+          },
+          "sample-sdk.title1.prop12": {
+            "type": "string",
+            "description": "This is property2 in title1.",
+            "scope": "resource"
+          },
+          "sample-sdk.title1.prop13": {
+            "type": "string",
+            "description": "Property 3 in title 1.",
+            "scope": "resource"
+          },
+          "sample-sdk.title1.prop14": {
+            "type": "string",
+            "description": "Property 4 in title 1.",
+            "scope": "resource"
+          },
+          "sample-sdk.title1.prop15": {
+            "type": "string",
+            "description": "Property 5 in title 1.",
+            "scope": "resource"
+          }
+        }
+      },
+      {
+        "title": "Title2",
+        "properties": {
+          "sample-sdk.title2.prop21": {
+            "type": "string",
+            "description": "This is property1 in title 2.",
+            "scope": "resource"
+          },
+          "sample-sdk.title2.prop22": {
+            "type": "string",
+            "description": "This is property2 in title 2.",
+            "scope": "resource"
+          },
+          "sample-sdk.title2.prop23": {
+            "type": "string",
+            "description": "Property 3 in title 2.",
+            "scope": "resource"
+          }
+        }
+      },
+      {
+        "title": "Title3",
+        "properties": {
+          "sample-sdk.title3.prop31": {
+            "type": "string",
+            "description": "First property in third title.",
+            "scope": "resource"
+          },
+          "sample-sdk.title3.prop32": {
+            "type": "string",
+            "description": "This is property2 in title 3.",
+            "scope": "resource"
+          },
+          "sample-sdk.title3.prop33": {
+            "type": "string",
+            "description": "Property 3 in title 3.",
+            "scope": "resource"
+          }
+        }
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/vscode": "^1.79.0",
-    "@types/glob": "^8.0.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "eslint": "^8.28.0",
-    "glob": "^8.0.3",
-    "mocha": "^10.1.0",
-    "typescript": "^4.9.3",
-    "@vscode/test-electron": "^2.2.0"
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "typescript": "^5.0.2"
   }
 }
