@@ -1,20 +1,49 @@
-/**@type {import('eslint').Linter.Config} */
-// eslint-disable-next-line no-undef
 module.exports = {
-	root: true,
-	parser: '@typescript-eslint/parser',
-	plugins: [
-		'@typescript-eslint',
-	],
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-	],
-	rules: {
-		'semi': [2, "always"],
-		'@typescript-eslint/no-unused-vars': 0,
-		'@typescript-eslint/no-explicit-any': 0,
-		'@typescript-eslint/explicit-module-boundary-types': 0,
-		'@typescript-eslint/no-non-null-assertion': 0,
-	}
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "root": true,
+    "rules": {
+        "@typescript-eslint/member-delimiter-style": [
+            "warn",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
+        "@typescript-eslint/naming-convention": "warn",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/semi": [
+            "warn",
+            "always"
+        ],
+        "curly": "warn",
+        "eqeqeq": [
+            "warn",
+            "always"
+        ],
+        "no-redeclare": "warn",
+        "no-throw-literal": "warn",
+        "no-unused-expressions": "off",
+        "semi": "off"
+    },
+    "ignorePatterns": [
+        "src/ui-test/resources/*"
+    ]
 };
