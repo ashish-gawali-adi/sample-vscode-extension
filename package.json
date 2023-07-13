@@ -1,110 +1,257 @@
 {
-  "name": "helloworld-sample",
-  "displayName": "Vscode Extension Tester Trial",
-  "description": "HelloWorld example for VS Code",
-  "version": "0.0.1",
-  "publisher": "vscode-samples",
-  "repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-sample",
-  "engines": {
-    "vscode": "^1.74.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
-      }
-    ],
-    "configuration": [
-      {
-        "title": "title1",
-        "properties": {
-          "sample-sdk.title1.prop11": {
-            "type": "string",
-            "description": "This is property1 in title1.",
-            "scope": "resource"
-          },
-          "sample-sdk.title1.prop12": {
-            "type": "string",
-            "description": "This is property2 in title1.",
-            "scope": "resource"
-          },
-          "sample-sdk.title1.prop13": {
-            "type": "string",
-            "description": "Property 3 in title 1.",
-            "scope": "resource"
-          },
-          "sample-sdk.title1.prop14": {
-            "type": "string",
-            "description": "Property 4 in title 1.",
-            "scope": "resource"
-          },
-          "sample-sdk.title1.prop15": {
-            "type": "string",
-            "description": "Property 5 in title 1.",
-            "scope": "resource"
-          }
-        }
-      },
-      {
-        "title": "Title2",
-        "properties": {
-          "sample-sdk.title2.prop21": {
-            "type": "string",
-            "description": "This is property1 in title 2.",
-            "scope": "resource"
-          },
-          "sample-sdk.title2.prop22": {
-            "type": "string",
-            "description": "This is property2 in title 2.",
-            "scope": "resource"
-          },
-          "sample-sdk.title2.prop23": {
-            "type": "string",
-            "description": "Property 3 in title 2.",
-            "scope": "resource"
-          }
-        }
-      },
-      {
-        "title": "Title3",
-        "properties": {
-          "sample-sdk.title3.prop31": {
-            "type": "string",
-            "description": "First property in third title.",
-            "scope": "resource"
-          },
-          "sample-sdk.title3.prop32": {
-            "type": "string",
-            "description": "This is property2 in title 3.",
-            "scope": "resource"
-          },
-          "sample-sdk.title3.prop33": {
-            "type": "string",
-            "description": "Property 3 in title 3.",
-            "scope": "resource"
-          }
-        }
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "lint": "eslint \"src/**/*.ts\"",
-    "watch": "tsc -watch -p ./"
-  },
-  "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/vscode": "^1.73.0",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "eslint": "^8.26.0",
-    "typescript": "^5.0.2"
-  }
+	"name": "extension-tester-sample",
+	"displayName": "Extension Tester Sample",
+	"description": "HelloWorld example for VS Code Extension Tester",
+	"version": "0.0.1",
+	"publisher": "ADI",
+	"license": "MIT",
+	"repository": "https://github.com/redhat-developer/vscode-extension-tester/examples/helloworld-sample",
+	"engines": {
+		"vscode": "^1.77.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "extension.webview",
+				"title": "Webview Test"
+			}
+		],
+		"configuration": [
+			{
+				"title": "Title1",
+				"properties": {
+					"tester-sample.title1.prop1":{
+						"type": "string",
+						"description": "Property1 of title1.",
+						"default": "Default Value T_1 P_1"
+					},
+					"tester-sample.title1.prop2":{
+						"type": "string",
+						"description": "Property 2 of title1.",
+						"default": "Default Value T_1 P_2"
+					},
+					"tester-sample.title1.property3":{
+						"type": "string",
+						"description": "Property three of title1.",
+						"default": "Default Value T_1 P_3"
+					},
+					"tester-sample.title1.prop4":{
+						"type": "string",
+						"description": "Property 4 of title1.",
+						"default": "Default Value T_1 P_4"
+					}
+				}
+			},
+			{
+				"title": "Title 2",
+				"properties": {
+					"tester-sample.title2.prop1":{
+						"type": "string",
+						"description": "Property1 of title two.",
+						"default": "Default Value T_2 P_1"
+					},
+					"tester-sample.sample.prop2":{
+						"type": "string",
+						"description": "Property 2 of title two.",
+						"default": "Default Value T_2 P_2"
+					},
+					"tester-sample.title2.prop3":{
+						"type": "string",
+						"description": "Property three of title two.",
+						"default": "Default Value T_2 P_3"
+					},
+					"tester-sample.title2.prop4":{
+						"type": "string",
+						"description": "Property 4 of title two.",
+						"default": "Default Value T_2 P_4"
+					},
+					"tester-sample.sample.property3":{
+						"type": "string",
+						"description": "Property five of title two.",
+						"default": "Default Value T_2 P_5"
+					}
+				}
+			},
+			{
+				"title": "Title three",
+				"properties": {
+					"tester-sample.sample.prop1":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					},
+					"tester-sample.sample.property2":{
+						"type": "string",
+						"description": "Property 2 of title 3.",
+						"default": "Default Value T_3 P_2"
+					},
+					"tester-sample.sample.prop3":{
+						"type": "string",
+						"description": "Property three of title3.",
+						"default": "Default Value T_3 P_3"
+					},
+					"tester-sample.sample.prop4":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_4"
+					},
+					"tester-sample.sample.prop5":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_5"
+					},
+					"tester-sample.sample.prop6":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_6"
+					},
+					"tester-sample.sample.prop7":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_7"
+					},
+					"tester-sample.sample.prop8":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_8"
+					},
+					"tester-sample.sample.prop9":{
+						"type": "string",
+						"description": "Property four of title 3.",
+						"default": "Default Value T_3 P_9"
+					}
+
+				}
+			},
+			{
+				"title": "Title 4",
+				"properties": {
+					"tester-sample.temp.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 5",
+				"properties": {
+					"tester-sample.temp1.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 6",
+				"properties": {
+					"tester-sample.temp2.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 7",
+				"properties": {
+					"tester-sample.temp3.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 8",
+				"properties": {
+					"tester-sample.temp4.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 9",
+				"properties": {
+					"tester-sample.temp5.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 13",
+				"properties": {
+					"tester-sample.temp6.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 10",
+				"properties": {
+					"tester-sample.temp7.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 11",
+				"properties": {
+					"tester-sample.temp8.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			},
+			{
+				"title": "Title 12",
+				"properties": {
+					"tester-sample.temp9.prop3":{
+						"type": "string",
+						"description": "Property 1 of title three.",
+						"default": "Default Value T_3 P_1"
+					}
+				}
+			}
+		]
+		
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./ && npm run lint",
+		"lint": "eslint src --ext .ts",
+		"watch": "tsc -watch -p ./",
+		"ui-test": "extest setup-and-run './out/ui-test/sample-test/sample-test.js' --code_settings settings.json --extensions_dir .test-extensions"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.3.5",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^16.18.34",
+		"@types/vscode": "^1.77.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.9",
+		"@typescript-eslint/parser": "^5.59.9",
+		"chai": "^4.3.7",
+		"eslint": "^8.42.0",
+		"mocha": "^10.2.0",
+		"typescript": "^5.1.3",
+		"vscode-extension-tester": "^5.7.1"
+	}
 }
